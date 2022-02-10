@@ -12,16 +12,14 @@
 										
 										x = log2[n] adım 
 	__________________________________________
-	[16,21] [8,11] [12,22]				n-1
-	[8,11,16,21] [12,22]				n-1
-	[8,11,12,16,21,22]					n-1
+	[16,21] [8,11] [12,22]				n-1 yer değiştirme
+	[8,11,16,21] [12,22]				n-1 yer değiştirme
+	[8,11,12,16,21,22]					n-1 yer değiştirme
+	
+										x = log2[n]*(n-1) adım 
 	
 
 ### Big-O gösterimini yazınız.
 
-	(n/2)x(n-1) +(n/2)x(n/2)
-	==> (n² -n)/2 +n²/4
-	==> n² -n +n² /2
-	==> 3n²/2 -n
 	
-	TimeComplexity = o(n²)
+	TimeComplexity = o(n * log2[n])
