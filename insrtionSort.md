@@ -1,0 +1,36 @@
+# Proje 1
+
+## [22,27,16,2,18,6] -> Insertion Sort
+
+1	for (i = 1; i < n; i++)                      *n x işlem*
+2	{
+3		deger = arr[i];             			*1 işlem*
+4		   j = i-1;								*1 işlem*
+5
+6		   while (j >= 0 && arr[j] > deger)		**karşılaştırılan sayının sıralı listedeki konumuna gitmesi ** *i x işlem* en kötü ihtimal
+7		   {
+8			   arr[j+1] = arr[j];				*1 işlem*
+9			   j--;								*1 işlem*
+10		   }
+11		   arr[j+1] = deger;					*1 işlem*
+12		}
+
+	{**22**, *27*, 16, 2, 18, 6}    *3 + 0 *
+	{*16*, 22, **27**, 2, 18, 6}	*3 + 2 x 2*
+	{*2*, 16, 22, **27**, 18, 6}	*3 + 2 x 3*
+	{2, 16, *18*, 22, **27**, 6}	*3 + 2 x 2*
+	{2, *6*, 16, 18, 22, **27**}	*3 + 2 x 4*
+	
+									işlem sayısı = 37
+____________________________________________________________________________________________
+	
+	*3 + 2 x 1*
+	*3 + 2 x 2*
+	*3 + 2 x 3*
+	*3 + 2 x 4*
+	*3 + 2 x 5*
+	
+	worst case  sayıların büyükten küçüğe doğru sıralanmış olması {27 ,22 ,18 ,16 ,6 ,2}
+			worst case TimeComplexity =	o(n²)  ,işlem sayısı = 45
+	best case 	sayıların küçükten büyüğe doğru sıralanmış olması {2, 6, 16, 18, 22, 27}
+			best case TimeComplexity = o(n) ,işlem sayısı = 5
